@@ -10,7 +10,7 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route
-          path="home"
+          index
           element={
             <PublicRoute>
               <HomePage />

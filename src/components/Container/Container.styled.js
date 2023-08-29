@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { devices } from 'constants/breakpoints';
+import { devices } from 'constants';
 
 export const StyledContainer = styled.div`
   min-height: 320px;
