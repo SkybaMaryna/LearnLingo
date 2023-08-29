@@ -13,3 +13,80 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+:root {
+  /* Colors */
+  --accent: #F0AA8D;
+  --common: #F4C8BA;
+  --black: #121417;
+  --black-10: rgba(18, 20, 23, 0.10);
+  --black-20: rgba(18, 20, 23, 0.20);
+  --black-70: rgba(18, 20, 23, 0.70);
+  --black-80: rgba(18, 20, 23, 0.80);
+  --grey-bg: #f8f8f8;
+  --grey-txt: #8A8A89;
+  --white: #ffffff;
+  --green: #38CD3E;
+
+  /* Other */
+  --time-dur-func: 250ms ease;
+
+  --desktop: 1440px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background-color: inherit;
+  border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+input {
+  font-family: inherit;
+}
