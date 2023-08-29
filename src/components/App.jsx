@@ -1,16 +1,39 @@
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from 'components';
+import HomePage from 'pages/HomePage/HomePage';
+import TeachersPage from 'pages/TeachersPage/TeachersPage';
+import FavoritePage from 'pages/FavoritePage/FavoritePage';
+import { PublicRoute, PrivateRoute } from 'hoc';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          path="home"
+          element={
+            <PublicRoute>
+              <HomePage />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="teachers"
+          element={
+            <PublicRoute>
+              <TeachersPage />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="favorite"
+          element={
+            <PrivateRoute>
+              <FavoritePage />
+            </PrivateRoute>
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
