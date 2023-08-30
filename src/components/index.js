@@ -8,3 +8,4 @@ export * from "./Button/Button";
 export * from "./Modal/Modal";
 export * from "./Forms/RegisterForm";
 export * from "./Forms/LoginForm";
+export * from "./BurgerMenu/BurgerMenu";

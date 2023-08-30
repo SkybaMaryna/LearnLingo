@@ -26,7 +26,7 @@ export const App = () => {
           }
         />
         <Route
-          path="favorite"
+          path="favorites"
           element={
             <PrivateRoute>
               <FavoritePage />

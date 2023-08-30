@@ -2,10 +2,6 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 import { logOutThunk } from '../../redux/auth/authOperations';
-
-// import LogInForm from '../form/logInForm';
-// import RegisterForm from '../form/registerForm';
-
 import ClipLoader from 'react-spinners/ClipLoader';
 import {
   selectIsAuth,

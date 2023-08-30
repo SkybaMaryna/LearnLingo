@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { HiMenu } from 'react-icons/hi';
 import { selectIsAuth } from 'redux/selectors';
-// import BurgerMenu from '../burgerMenu/burgerMenu';
 import { StyledBrgBtn, StyledHeader, StyledNav, StyledNavLink, StyledNavLinkItem, StyledNavList, StyledWrapper } from './Header.styled';
-import { Auth, Logo } from 'components';
+import { Auth, BurgerMenu, Logo } from 'components';
 
 export const Header = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -46,11 +45,11 @@ export const Header = () => {
           </StyledBrgBtn>
         </StyledWrapper>
       </StyledHeader>
-      {/* <BurgerMenu
+      <BurgerMenu
         items={items}
         isBrgOpen={isBrgOpen}
         setIsBrgOpen={setIsBrgOpen}
-      /> */}
+      />
     </>
   );
 };
