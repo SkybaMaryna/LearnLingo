@@ -7,8 +7,6 @@ import { selectIsAuth } from 'redux/selectors';
 import { StyledBrgBtn, StyledHeader, StyledNav, StyledNavLink, StyledNavLinkItem, StyledNavList, StyledWrapper } from './Header.styled';
 import { Auth, Logo } from 'components';
 
-const { NavLink } = require('react-router-dom');
-
 export const Header = () => {
   const isAuth = useSelector(selectIsAuth);
   const [isBrgOpen, setIsBrgOpen] = useState(false);

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 import { logOutThunk } from '../../redux/auth/authOperations';
-// import Modal from '../modal/modal';
+
 // import LogInForm from '../form/logInForm';
 // import RegisterForm from '../form/registerForm';
 
@@ -12,7 +12,7 @@ import {
   selectIsAuthLoading,
   selectLogin,
 } from 'redux/selectors';
-import { Button, ContainerCenter } from 'components';
+import { Button, ContainerCenter, Modal } from 'components';
 import { getStyledIcon } from 'components/Button/Button.styled';
 import { StyledAuthWrapper, StyledCongrats } from './Auth.styled';
 
@@ -60,12 +60,12 @@ export const Auth = () => {
           }}
         />
 
-        {/* <Modal active={isOpenLoginModal} setActive={setIsOpenLoginModal}>
-          <LogInForm setIsOpenLoginModal={setIsOpenLoginModal} />
+        <Modal active={isOpenLoginModal} setActive={setIsOpenLoginModal}>
+          {/* <LogInForm setIsOpenLoginModal={setIsOpenLoginModal} /> */}
         </Modal>
         <Modal active={isOpenRegisterModal} setActive={setIsOpenRegisterModal}>
-          <RegisterForm setIsOpenRegisterModal={setIsOpenRegisterModal} />
-        </Modal> */}
+          {/* <RegisterForm setIsOpenRegisterModal={setIsOpenRegisterModal} /> */}
+        </Modal>
       </StyledAuthWrapper>
     );
   }

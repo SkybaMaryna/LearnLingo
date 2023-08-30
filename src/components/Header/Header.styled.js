@@ -84,7 +84,7 @@ export const StyledNavLinkItem = styled(NavLink)`
   }
 `;
 
-export const StyledBrgBtn = styled.div`
+export const StyledBrgBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
