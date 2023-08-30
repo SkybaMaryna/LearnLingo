@@ -12,7 +12,7 @@ import {
   selectIsAuthLoading,
   selectLogin,
 } from 'redux/selectors';
-import { Button, ContainerCenter, Modal } from 'components';
+import { Button, ContainerCenter, LoginForm, Modal, RegisterForm } from 'components';
 import { getStyledIcon } from 'components/Button/Button.styled';
 import { StyledAuthWrapper, StyledCongrats } from './Auth.styled';
 
@@ -61,10 +61,10 @@ export const Auth = () => {
         />
 
         <Modal active={isOpenLoginModal} setActive={setIsOpenLoginModal}>
-          {/* <LogInForm setIsOpenLoginModal={setIsOpenLoginModal} /> */}
+          <LoginForm setIsOpenLoginModal={setIsOpenLoginModal} />
         </Modal>
         <Modal active={isOpenRegisterModal} setActive={setIsOpenRegisterModal}>
-          {/* <RegisterForm setIsOpenRegisterModal={setIsOpenRegisterModal} /> */}
+          <RegisterForm setIsOpenRegisterModal={setIsOpenRegisterModal} />
         </Modal>
       </StyledAuthWrapper>
     );
@@ -76,7 +76,7 @@ export const Auth = () => {
       <Button
           text="Log out"
           variant="transparent"
-          width="80px"
+          width="90px"
           height="20px"
           icon={<StyledFiLogOut />}
           onClick={() => {
