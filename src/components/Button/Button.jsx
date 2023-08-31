@@ -16,13 +16,13 @@ export const Button = ({
     <StyledButton
       type={type}
       aria-label={ariaLabel}
-      marginbottom={marginbottom}
-      margintop={margintop}
+      $marginbottom={marginbottom}
+      $margintop={margintop}
       onClick={onClick}
       width={width}
       height={height}
-      variant={variant}
-      icon={icon}
+      $variant={variant}
+      $icon={icon}
     >
       {icon}
       {text}

@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
   align-items: center;
   border-radius: 12px;
   font-size: ${props => {
-    switch (props.variant) {
+    switch (props.$variant) {
       case 'dark':
       case 'transparent':
         return '16px';
@@ -20,7 +20,7 @@ export const StyledButton = styled.button`
   line-height: 1.2;
 
   background-color: ${props => {
-    switch (props.variant) {
+    switch (props.$variant) {
       case 'dark':
         return 'var(--black)';
       case 'transparent':
@@ -33,19 +33,19 @@ export const StyledButton = styled.button`
   border: none;
   outline: none;
   color: ${props =>
-    props.variant === 'dark' ? 'var(--white)' : 'var(--black)'};
+    props.$variant === 'dark' ? 'var(--white)' : 'var(--black)'};
 
   width: ${props => (props.width ? props.width : '100%')};
   height: ${props => (props.height ? props.height : '100%')};
 
-  margin-top: ${props => (props.margintop ? props.margintop : '0px')};
-  margin-bottom: ${props => (props.marginbottom ? props.marginbottom : '0px')};
+  margin-top: ${props => (props.$margintop ? props.$margintop : '0px')};
+  margin-bottom: ${props => (props.$marginbottom ? props.$marginbottom : '0px')};
   transition: background-color var(--time-dur-func);
 
   &:hover,
   &:focus {
     background-color: ${props => {
-      switch (props.variant) {
+      switch (props.$variant) {
         case 'dark':
           return 'var(--black-80)';
         case 'transparent':
@@ -54,7 +54,7 @@ export const StyledButton = styled.button`
           return 'var(--accent)';
       }
     }};
-    color: ${props => props.variant === 'transparent' && 'var(--black-80)'};
+    color: ${props => props.$variant === 'transparent' && 'var(--black-80)'};
   }
 `;
 
