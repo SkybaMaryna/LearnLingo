@@ -47,8 +47,8 @@ export const StyledModalBox = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    border: 6px solid var(--latte-bg);
-    background-color: var(--accent-color);
+    border: 6px solid var(--common);
+    background-color: var(--accent);
     border-radius: 20px;
     height: 40px;
   }

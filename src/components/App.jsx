@@ -4,36 +4,41 @@ import HomePage from 'pages/HomePage/HomePage';
 import TeachersPage from 'pages/TeachersPage/TeachersPage';
 import FavoritePage from 'pages/FavoritePage/FavoritePage';
 import { PublicRoute, PrivateRoute } from 'hoc';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={
-            <PublicRoute>
-              <HomePage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="teachers"
-          element={
-            <PublicRoute>
-              <TeachersPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="favorites"
-          element={
-            <PrivateRoute>
-              <FavoritePage />
-            </PrivateRoute>
-          }
-        />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <PublicRoute>
+                <HomePage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="teachers"
+            element={
+              <PublicRoute>
+                <TeachersPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="favorites"
+            element={
+              <PrivateRoute>
+                <FavoritePage />
+              </PrivateRoute>
+            }
+          />
+        </Route>
+      </Routes>
+      <ToastContainer autoClose={2500} />
+    </>
   );
 };

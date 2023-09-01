@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Container, ContainerCenter, Header } from 'components';
+import { ContainerCenter, Header } from 'components';
 
 export const Layout = () => {
   return (
@@ -8,9 +8,7 @@ export const Layout = () => {
         <Header />
       </ContainerCenter>
       <main>
-        <Container>
-          <Outlet />
-        </Container>
+        <Outlet />
       </main>
     </>
   );

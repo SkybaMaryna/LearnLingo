@@ -8,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--black);
+  box-sizing: border-box;
 }
 
 code {
@@ -29,11 +30,11 @@ code {
   --grey-txt: #8A8A89;
   --white: #ffffff;
   --green: #38CD3E;
+  --orange: #FFC531;
+  --red: #FF0000;
 
   /* Other */
   --time-dur-func: 250ms ease;
-
-  --desktop: 1440px;
 }
 
 html {

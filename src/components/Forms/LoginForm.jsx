@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import {
   StyledAiOutlineEye,
   StyledAiOutlineEyeInvisible,
+  StyledError,
   StyledForm,
   StyledFormInsight,
   StyledInput,
@@ -55,6 +56,9 @@ export const LoginForm = () => {
                   : ''
               }
             />
+            {errors.email && touched.email ? (
+              <StyledError>{errors.email}</StyledError>
+            ) : null}
             <StyledPasswordDiv>
               <StyledInput
                 type={showPassword ? 'text' : 'password'}
@@ -90,6 +94,9 @@ export const LoginForm = () => {
                 ''
               )}
             </StyledPasswordDiv>
+            {errors.password && touched.password ? (
+              <StyledError>{errors.password}</StyledError>
+            ) : null}
           </StyledInputWrap>
 
           <Button type="submit" text="Log In" />

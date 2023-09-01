@@ -5,6 +5,7 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
     apiKey: "AIzaSyDZAfSau2P6MrNmkKgR4WhiDlqFHQwbGqc",
     authDomain: "learnlingo-5b2ab.firebaseapp.com",
+    databaseURL: "https://learnlingo-5b2ab-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "learnlingo-5b2ab",
     storageBucket: "learnlingo-5b2ab.appspot.com",
     messagingSenderId: "448455028967",

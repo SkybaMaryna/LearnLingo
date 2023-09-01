@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import {
   StyledAiOutlineEye,
   StyledAiOutlineEyeInvisible,
+  StyledError,
   StyledForm,
   StyledFormInsight,
   StyledInput,
@@ -50,13 +51,16 @@ export const RegisterForm = () => {
                 handleChange(e);
               }}
               className={
-                touched.name && !errors.name
+                touched.login && !errors.login
                   ? 'valid-border'
-                  : errors.name && touched.name
+                  : errors.login && touched.login
                   ? 'invalid-border'
                   : ''
               }
             />
+            {errors.login && touched.login ? (
+             <StyledError>{errors.login}</StyledError>
+           ) : null}
             <StyledInput
               type="email"
               name="email"
@@ -73,6 +77,9 @@ export const RegisterForm = () => {
                   : ''
               }
             />
+            {errors.email && touched.email ? (
+             <StyledError>{errors.email}</StyledError>
+           ) : null}
             <StyledPasswordDiv>
               <StyledInput
                 type={showPassword ? 'text' : 'password'}
@@ -108,6 +115,9 @@ export const RegisterForm = () => {
                 ''
               )}
             </StyledPasswordDiv>
+            {errors.password && touched.password ? (
+             <StyledError>{errors.password}</StyledError>
+           ) : null}
           </StyledInputWrap>
 
           <Button type="submit" text="Sign Up" />
