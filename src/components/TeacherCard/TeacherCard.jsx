@@ -79,7 +79,7 @@ export const TeacherCard = ({ teacher }) => {
         <div className="teacherDescriptionBox">
           <StyledTeacherDescrHead>
             <div>
-              <StyledGreyTitle>Languages</StyledGreyTitle>
+              <StyledGreyTitle>Teacher</StyledGreyTitle>
               <StyledTeacherName>
                 {name} {surname}
               </StyledTeacherName>
