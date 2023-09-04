@@ -6,6 +6,8 @@ export const StyledFilterWrapper = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
 
   padding: 32px 16px;
 
@@ -22,7 +24,7 @@ export const StyledFilterBox = styled.div`
 
 export const StyledFilterPlaceholder = styled.div`
   color: var(--grey-txt);
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
@@ -35,14 +37,14 @@ export const StyledInputBox = styled.div`
   display: flex;
   justify-content: flex-start;
   height: 40px;
-  padding: 12px 16px;
+  padding: 14px 18px;
   align-items: center;
   border-radius: 14px;
   background: var(--white);
 
   color: var(--black);
   font-size: 18px;
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   line-height: 1.11;
   cursor: pointer;
@@ -75,14 +77,12 @@ export const StyledDropdownList = styled.ul`
   background: var(--white);
 
   color: var(--black);
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.11;
 
-  transition: opacity var(--time-dur-func);
-  transition: transform var(--time-dur-func);
- 
+  transition: opacity var(--time-dur-func), transform var(--time-dur-func);
 
   &.active {
     transform: rotateX(0deg);

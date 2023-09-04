@@ -61,7 +61,7 @@ export const StyledAvatarImg = styled.img`
 `;
 export const StyledTeacherName = styled.h2`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1;
@@ -70,7 +70,7 @@ export const StyledTeacherName = styled.h2`
 
 export const StyledGreyTitle = styled.span`
   color: var(--grey-txt);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -78,7 +78,7 @@ export const StyledGreyTitle = styled.span`
 
 export const StyledBlackTitle = styled.span`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
 
   font-weight: 500;
@@ -112,7 +112,7 @@ export const StyledTeacherDescrHeadList = styled.ul`
 `;
 export const StyledTeacherDescrHeadItem = styled.li`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -138,7 +138,7 @@ export const StyledTeacherOpenDescr = styled.p`
   margin-bottom: 32px;
 
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
 
   line-height: 24px;
@@ -181,7 +181,7 @@ export const StyledFeedbackAuthor = styled.div`
 
 export const StyledFeedbackStars = styled.span`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
@@ -191,7 +191,7 @@ export const StyledFeedbackStars = styled.span`
 
 export const StyledReadMoreBtn = styled.button`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -227,7 +227,7 @@ export const StyledLevelsItem = styled.li`
   border-color: var(--black-20);
 
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.14;

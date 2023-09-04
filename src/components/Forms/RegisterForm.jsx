@@ -45,6 +45,7 @@ export const RegisterForm = () => {
             <StyledInput
               type="text"
               name="login"
+              autoComplete="true"
               placeholder="Name"
               onChange={e => {
                 setFieldTouched('login');
@@ -64,6 +65,7 @@ export const RegisterForm = () => {
             <StyledInput
               type="email"
               name="email"
+              autoComplete="true"
               placeholder="Email"
               onChange={e => {
                 setFieldTouched('email');
@@ -84,6 +86,7 @@ export const RegisterForm = () => {
               <StyledInput
                 type={showPassword ? 'text' : 'password'}
                 name="password"
+                autoComplete="true"
                 onChange={e => {
                   setFieldTouched('password');
                   handleChange(e);

@@ -16,7 +16,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const StyledLogo = styled.p`
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;

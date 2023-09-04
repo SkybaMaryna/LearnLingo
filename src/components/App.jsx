@@ -37,6 +37,7 @@ export const App = () => {
             }
           />
         </Route>
+        <Route path="*" element={<HomePage />} />
       </Routes>
       <ToastContainer autoClose={2500} />
     </>

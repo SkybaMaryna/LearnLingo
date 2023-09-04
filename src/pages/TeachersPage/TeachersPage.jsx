@@ -85,6 +85,7 @@ const TeachersPage = () => {
               text="Load more"
               width="183px"
               height="60px"
+              margintop='64px'
               onClick={handleLoadMore}
             />
           </ContainerCenter>

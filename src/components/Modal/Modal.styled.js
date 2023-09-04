@@ -37,7 +37,7 @@ export const StyledModalBox = styled.div`
   border-radius: 30px;
   background-color: var(--white);
   transform: scale(0.5);
-  transition: 0.4s transform;
+  transition: transform var(--time-dur-func);
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -55,7 +55,6 @@ export const StyledModalBox = styled.div`
 
   &.active {
     transform: scale(1);
-    transition: 0.4s transform;
   }
 `;
 

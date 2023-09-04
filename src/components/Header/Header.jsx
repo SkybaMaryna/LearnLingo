@@ -3,12 +3,24 @@ import { useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { HiMenu } from 'react-icons/hi';
 import { selectIsAuth } from 'redux/selectors';
-import { StyledBrgBtn, StyledHeader, StyledNav, StyledNavLink, StyledNavLinkItem, StyledNavList, StyledWrapper } from './Header.styled';
+import {
+  StyledBrgBtn,
+  StyledHeader,
+  StyledNav,
+  StyledNavLink,
+  StyledNavLinkItem,
+  StyledNavList,
+  StyledWrapper,
+} from './Header.styled';
 import { Auth, BurgerMenu, Logo } from 'components';
+import { useMediaQuery } from 'react-responsive';
 
 export const Header = () => {
   const isAuth = useSelector(selectIsAuth);
   const [isBrgOpen, setIsBrgOpen] = useState(false);
+  const isTablet = useMediaQuery({
+    query: '(min-width: 768px)',
+  });
 
   const items = [
     { value: 'Home', goTo: '/', isShown: true },
@@ -35,7 +47,7 @@ export const Header = () => {
               })}
             </StyledNavList>
           </StyledNav>
-          <Auth />
+          {isTablet && <Auth />}
           <StyledBrgBtn
             onClick={() => {
               setIsBrgOpen(!isBrgOpen);

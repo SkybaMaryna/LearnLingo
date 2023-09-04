@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { devices } from 'constants';
 
 export const StyledTeachersPageBox = styled.div`
-background-color: var(--grey-bg)`
-
+  background-color: var(--grey-bg);
+  padding-bottom: 96px;
+`;
 
 export const StyledTeachersList = styled.ul`
   display: flex;
@@ -12,9 +14,8 @@ export const StyledTeachersList = styled.ul`
   max-width: 1312px;
 
   padding: 0 16px;
-  margin-bottom: 32px;
 
-  @media screen and (min-width: 600px) {
+  @media ${devices.tablet} {
     padding: 0 64px;
   }
 `;

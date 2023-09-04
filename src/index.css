@@ -34,7 +34,7 @@ code {
   --red: #FF0000;
 
   /* Other */
-  --time-dur-func: 250ms ease;
+  --time-dur-func: 400ms ease;
 }
 
 html {

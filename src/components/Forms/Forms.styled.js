@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { devices } from 'constants';
 
 export const StyledForm = styled(Formik)``;
 export const StyledFormInsight = styled(Form)`
@@ -11,7 +10,7 @@ export const StyledFormInsight = styled(Form)`
 `;
 export const StyledTitle = styled.h2`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 40px;
   font-weight: 500;
   line-height: 1.2;
@@ -21,7 +20,7 @@ export const StyledTitle = styled.h2`
 
 export const StyledText = styled.p`
   color: var(--black-80);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.4;
   margin-bottom: 40px;
@@ -54,13 +53,12 @@ export const StyledInput = styled(Field)`
   justify-content: center;
   align-items: center;
 
-  /* width: 100%; */
   border-radius: 12px;
   outline: none;
-  border: 1px solid rgba(18, 20, 23, 0.1);
+  border: 1px solid var(--black-10);
 
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 24px;
 
@@ -79,32 +77,6 @@ export const StyledInput = styled(Field)`
     background-color: transparent;
   }
 `;
-export const StyledButton = styled.button`
-  width: 100%;
-  height: 54px;
-  border: none;
-  justify-content: center;
-  border-radius: 42px;
-  background: #f3f3f3;
-  color: #161f37;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: calc (18 / 14);
-  margin-bottom: 14px;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-
-  &:hover {
-    text-decoration: underline;
-    box-shadow: 1px 0px 3px 4px rgba(35, 93, 171, 0.4) inset;
-  }
-
-  @media ${devices.tablet} {
-    padding: 18px 169px;
-    font-size: 16px;
-    line-height: calc (18 / 16);
-  }
-`;
 
 export const StyledPasswordDiv = styled.div`
   position: relative;
@@ -121,7 +93,7 @@ export const StyledTeacherAvatar = styled.img`
 
 export const StyledReasonText = styled.p`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.33;
@@ -147,7 +119,7 @@ export const StyledRadioInput = styled(Field)`
 export const StyledLabel = styled.label`
   color: var(--black);
   text-align: center;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.37;
   position: relative;
@@ -184,7 +156,7 @@ export const StyledLabel = styled.label`
 
 export const StyledError = styled.div`
   color: var(--red);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
   line-height: 1.37;
 `;

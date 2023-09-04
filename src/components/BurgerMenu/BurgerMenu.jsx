@@ -7,14 +7,23 @@ import {
   StyledBurgerLink,
   StyledBurgerList,
 } from './BurgerMenu.styled';
+import { useMediaQuery } from 'react-responsive';
+import { Auth } from 'components';
 
 export const BurgerMenu = ({ items, isBrgOpen, setIsBrgOpen }) => {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
+  isBrgOpen
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
+
   return (
     <StyledBurgerBox
-      className={isBrgOpen ? 'burgerMenuBox active' : 'burgerMenuBox'}
+      className={isBrgOpen ? 'active' : ''}
       onClick={() => setIsBrgOpen(false)}
     >
       <StyledBurgerContent onClick={e => e.stopPropagation()}>
+        {isMobile && <Auth />}
         <nav>
           <StyledBurgerList>
             {items.map(item => {

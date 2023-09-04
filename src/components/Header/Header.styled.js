@@ -3,17 +3,15 @@ import { devices } from 'constants';
 import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
+width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  gap: 16px;
   padding: 30px 16px;
 
   @media ${devices.tablet} {
     flex-wrap: wrap;
     flex-direction: row;
+    gap: 16px;
 
     padding: 30px 64px;
   }
@@ -52,7 +50,7 @@ export const StyledNavList = styled.ul`
 
 export const StyledNavLink = styled.li`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.25;
 

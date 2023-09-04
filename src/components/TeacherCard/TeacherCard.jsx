@@ -61,6 +61,10 @@ export const TeacherCard = ({ teacher }) => {
 
   const dispatch = useDispatch();
 
+  isModalActive
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
+
   const isTeacherFavorite = favoriteList.find(favorite => favorite.id === id);
 
   const generator = new AvatarGenerator();
@@ -215,7 +219,7 @@ export const TeacherCard = ({ teacher }) => {
           </StyledAddFavoriteBtn>
         )}
       </StyledTeacherItemBox>
-      <Modal active={isModalActive} setActive={setIsModalActive}>
+      <Modal isModalActive={isModalActive} setActive={setIsModalActive}>
         <BookLessonForm
           teacherName={name}
           surname={surname}

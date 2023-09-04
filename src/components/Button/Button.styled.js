@@ -54,7 +54,7 @@ export const StyledButton = styled.button`
           return 'var(--accent)';
       }
     }};
-    color: ${props => props.$variant === 'transparent' && 'var(--black-80)'};
+    color: ${props => props.$variant === 'transparent' && 'var(--accent)'};
   }
 `;
 

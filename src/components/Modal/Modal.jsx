@@ -7,32 +7,32 @@ import {
   StyledModalBoxScroll,
 } from './Modal.styled';
 
-export const Modal = ({ active = false, setActive, children }) => {
+export const Modal = ({ isModalActive, setActive, children }) => {
   useEffect(() => {
-    const hendleCloseByEsc = e => {
+    const handleCloseByEsc = e => {
       if (e.code !== 'Escape') {
         return;
       }
       setActive(false);
     };
 
-    window.addEventListener('keydown', hendleCloseByEsc);
+    window.addEventListener('keydown', handleCloseByEsc);
 
     return () => {
-      window.removeEventListener('keydown', hendleCloseByEsc);
+      window.removeEventListener('keydown', handleCloseByEsc);
     };
   }, [setActive]);
 
   return (
     <StyledBackdrop
-      className={active ? 'backdrop active' : 'backdrop'}
+      className={isModalActive ? 'active' : ''}
       onClick={() => {
         setActive(false);
       }}
     >
       <StyledModalBoxScroll>
         <StyledModalBox
-          className={active ? 'modalBox active' : 'modalBox'}
+          className={isModalActive ? 'active' : ''}
           onClick={e => e.stopPropagation()}
         >
           <StyledCloseBtn

@@ -43,6 +43,7 @@ export const LoginForm = () => {
             <StyledInput
               type="email"
               name="email"
+              autoComplete="true"
               placeholder="Email"
               onChange={e => {
                 setFieldTouched('email');
@@ -63,6 +64,7 @@ export const LoginForm = () => {
               <StyledInput
                 type={showPassword ? 'text' : 'password'}
                 name="password"
+                autoComplete="true"
                 onChange={e => {
                   setFieldTouched('password');
                   handleChange(e);

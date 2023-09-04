@@ -60,7 +60,7 @@ const HomePage = () => {
             </StyledStatItem>
             <StyledStatItem>
               <StyledStatNumber>120 +</StyledStatNumber>
-              <StyledStatText>Subjects taught tutors</StyledStatText>
+              <StyledStatText>Subjects taught</StyledStatText>
             </StyledStatItem>
             <StyledStatItem>
               <StyledStatNumber>200 +</StyledStatNumber>

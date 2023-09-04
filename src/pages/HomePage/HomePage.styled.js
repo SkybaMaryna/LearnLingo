@@ -5,6 +5,7 @@ export const StyledHomeBox = styled.div`
   display: flex;
   gap: 24px;
   flex-direction: column;
+  padding-bottom: 32px;
 `;
 
 export const StyledHero = styled.div`
@@ -42,7 +43,7 @@ export const StyledHeroAbout = styled.div`
 
 export const StyledHeroTitle = styled.h1`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 48px;
   font-weight: 500;
   line-height: 1.16;
@@ -59,7 +60,7 @@ export const StyledHeroTitle = styled.h1`
 
 export const StyledHeroTitleAccent = styled.span`
   color: var(--black);
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-size: 48px;
   font-style: italic;
   font-weight: 400;
@@ -74,7 +75,7 @@ export const StyledHeroTitleAccent = styled.span`
 
 export const StyledHeroAboutText = styled.p`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.37;
   text-align: center;
@@ -111,15 +112,12 @@ export const StyledStatList = styled.ul`
   padding: 40px 20px;
 
   @media ${devices.tablet} {
-    width: 640px;
+    width: 100%;
     gap: 40px;
   }
 
   @media ${devices.desktop} {
-    padding: 40px 122px;
-    width: 1312px;
-    height: 116px;
-    flex-shrink: 0;
+    padding: 40px 120px;
     gap: 100px;
   }
 `;
@@ -130,7 +128,7 @@ export const StyledStatItem = styled.li`
 
 export const StyledStatNumber = styled.p`
   color: var(--black);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 28px;
   font-weight: 500;
   line-height: 32px;
@@ -138,9 +136,9 @@ export const StyledStatNumber = styled.p`
 `;
 
 export const StyledStatText = styled.p`
-  width: 96px;
+  width: 86px;
   color: var(--black-70);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.28px;

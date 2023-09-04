@@ -8,7 +8,13 @@ import {
   selectIsAuthLoading,
   selectLogin,
 } from 'redux/selectors';
-import { Button, ContainerCenter, LoginForm, Modal, RegisterForm } from 'components';
+import {
+  Button,
+  ContainerCenter,
+  LoginForm,
+  Modal,
+  RegisterForm,
+} from 'components';
 import { getStyledIcon } from 'components/Button/Button.styled';
 import { StyledAuthWrapper, StyledCongrats } from './Auth.styled';
 
@@ -22,6 +28,10 @@ export const Auth = () => {
   const isAuth = useSelector(selectIsAuth);
   const login = useSelector(selectLogin);
   const isAuthLoading = useSelector(selectIsAuthLoading);
+  
+  isOpenLoginModal || isOpenRegisterModal
+  ? (document.body.style.overflow = 'hidden')
+  : (document.body.style.overflow = 'auto');
 
   const dispatch = useDispatch();
 
@@ -56,12 +66,22 @@ export const Auth = () => {
           }}
         />
 
-        <Modal active={isOpenLoginModal} setActive={setIsOpenLoginModal}>
-          <LoginForm setIsOpenLoginModal={setIsOpenLoginModal} />
-        </Modal>
-        <Modal active={isOpenRegisterModal} setActive={setIsOpenRegisterModal}>
-          <RegisterForm setIsOpenRegisterModal={setIsOpenRegisterModal} />
-        </Modal>
+        {isOpenRegisterModal && (
+          <Modal
+            isModalActive={isOpenRegisterModal}
+            setActive={setIsOpenRegisterModal}
+          >
+            <RegisterForm />
+          </Modal>
+        )}
+        {isOpenLoginModal && (
+          <Modal
+            isModalActive={isOpenLoginModal}
+            setActive={setIsOpenLoginModal}
+          >
+            <LoginForm />
+          </Modal>
+        )}
       </StyledAuthWrapper>
     );
   }
@@ -70,15 +90,15 @@ export const Auth = () => {
     <StyledAuthWrapper>
       <StyledCongrats>Hello, {login}!</StyledCongrats>
       <Button
-          text="Log out"
-          variant="transparent"
-          width="90px"
-          height="20px"
-          icon={<StyledFiLogOut />}
-          onClick={() => {
-            dispatch(logOutThunk());
-          }}
-        />
+        text="Log out"
+        variant="transparent"
+        width="90px"
+        height="20px"
+        icon={<StyledFiLogOut />}
+        onClick={() => {
+          dispatch(logOutThunk());
+        }}
+      />
     </StyledAuthWrapper>
   );
 };
