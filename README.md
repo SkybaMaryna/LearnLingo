@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <img src="./assets/hero.png'" alt="Logo" width="350" height="350">
+  <img src="assets/hero.png" alt="Logo" width="350" height="350">
 </div>
 
 <h1 align="left">LearnLingo React App</h1>
@@ -12,14 +12,14 @@ LearnLingo React App is an application for a company that offers to use the serv
 
 <h2 align="left">Features</h2>
 <div align="left">
-The application consists of 3 pages:
-• a `"Home"` page with a list of company benefits and a button inviting you to start working with the application.
-• a `"Teachers"` page, which contains a list of teachers that the user can filter by the language of teaching, by the level of knowledge of the students with whom the teacher works and the price per hour of class.
-• private page `"Favorites"` with teachers who were added by the user to "favorites".
+The application consists of 3 pages:<br />
+• a "Home" page with a list of company benefits and a button inviting you to start working with the application.<br />
+• a "Teachers" page, which contains a list of teachers that the user can filter by the language of teaching, by the level of knowledge of the students with whom the teacher works and the price per hour of class.<br />
+• private page "Favorites" with teachers who were added by the user to favorites.
 
 <h3 align="left">Technologies Used</h3>
 <strong>Frontend:</strong> JavaScript, React, Redux, Axios, Styled-Components.</br>
-<strong>Backend: Firebase - Authentication, Realtime Database</strong>
+<strong>Backend:</strong> Firebase - Authentication, Realtime Database
 </div>
 
 <h2 align="left">Getting Started</h2>
