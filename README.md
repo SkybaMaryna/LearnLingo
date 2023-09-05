@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <img src="assets/hero.png" alt="Logo" width="350" height="350">
+  <img src="assets/hero.png" alt="Logo" width="350" height="340">
 </div>
 
 <h1 align="left">LearnLingo React App</h1>
