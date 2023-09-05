@@ -72,14 +72,16 @@ export const TeacherCard = ({ teacher }) => {
   return (
     <>
       <StyledTeacherItemBox>
-        <StyledAvatarBox>
-          <StyledAvatarImg
-            src={avatar_url}
-            height="100px"
-            width="100px"
-            alt="Teacher avatar"
-          />
-        </StyledAvatarBox>
+        <div data-aos="flip-left">
+          <StyledAvatarBox>
+            <StyledAvatarImg
+              src={avatar_url}
+              height="100px"
+              width="100px"
+              alt="Teacher avatar"
+            />
+          </StyledAvatarBox>
+        </div>
         <div className="teacherDescriptionBox">
           <StyledTeacherDescrHead>
             <div>
@@ -187,46 +189,56 @@ export const TeacherCard = ({ teacher }) => {
           </div>
         </div>
         {isTeacherFavorite && isAuth ? (
-          <StyledAddFavoriteBtn
-            type="button"
-            onClick={() => {
-              if (!isAuth) {
-                toast.warn(
-                  'The functionality is available only to authorized users'
-                );
-                return;
-              }
-              dispatch(removeFavorite(id));
-            }}
+          <div
+            data-aos="flip-left"
           >
-            <AiFillHeart color={`var(--accent)`} size={26} />
-          </StyledAddFavoriteBtn>
+            <StyledAddFavoriteBtn
+              type="button"
+              onClick={() => {
+                if (!isAuth) {
+                  toast.warn(
+                    'The functionality is available only to authorized users'
+                  );
+                  return;
+                }
+                dispatch(removeFavorite(id));
+              }}
+            >
+              <AiFillHeart color={`var(--accent)`} size={26} />
+            </StyledAddFavoriteBtn>
+          </div>
         ) : (
-          <StyledAddFavoriteBtn
-            type="button"
-            className="heartbeat"
-            onClick={() => {
-              if (!isAuth) {
-                toast.warn(
-                  'The functionality is available only to authorized users'
-                );
-                return;
-              }
-              dispatch(addFavorite(teacher));
-            }}
+          <div
+            data-aos="flip-left"
           >
-            <AiOutlineHeart color={`var(--accent)`} size={26} />
-          </StyledAddFavoriteBtn>
+            <StyledAddFavoriteBtn
+              type="button"
+              className="heartbeat"
+              onClick={() => {
+                if (!isAuth) {
+                  toast.warn(
+                    'The functionality is available only to authorized users'
+                  );
+                  return;
+                }
+                dispatch(addFavorite(teacher));
+              }}
+            >
+              <AiOutlineHeart color={`var(--accent)`} size={26} />
+            </StyledAddFavoriteBtn>
+          </div>
         )}
       </StyledTeacherItemBox>
-      <Modal isModalActive={isModalActive} setActive={setIsModalActive}>
-        <BookLessonForm
-          teacherName={name}
-          surname={surname}
-          avatar_url={avatar_url}
-          setIsModalActive={setIsModalActive}
-        />
-      </Modal>
+      {isModalActive && (
+        <Modal isModalActive={isModalActive} setActive={setIsModalActive}>
+          <BookLessonForm
+            teacherName={name}
+            surname={surname}
+            avatar_url={avatar_url}
+            setIsModalActive={setIsModalActive}
+          />
+        </Modal>
+      )}
     </>
   );
 };

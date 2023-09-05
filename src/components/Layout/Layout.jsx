@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { ContainerCenter, Header } from 'components';
+import { Suspense } from 'react';
+import { ContainerCenter, Header, Loader } from 'components';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { StyledToTopBtn } from './Layout.styled';
@@ -10,7 +11,7 @@ export const Layout = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       if (currentScrollPos > 400) {
         setIsVisible(true);
       } else {
@@ -36,9 +37,15 @@ export const Layout = () => {
         <Header />
       </ContainerCenter>
       <main>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </main>
-      {isVisible && <StyledToTopBtn type="button" onClick={scrollToTop} ><BsFillArrowUpCircleFill color='var(--accent' size='60'/></StyledToTopBtn>}
+      {isVisible && (
+        <StyledToTopBtn type="button" onClick={scrollToTop}>
+          <BsFillArrowUpCircleFill color="var(--accent" size="60" />
+        </StyledToTopBtn>
+      )}
     </>
   );
 };

@@ -1,11 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
 import { Layout } from 'components';
-import HomePage from 'pages/HomePage/HomePage';
-import TeachersPage from 'pages/TeachersPage/TeachersPage';
-import FavoritePage from 'pages/FavoritePage/FavoritePage';
+// import HomePage from 'pages/HomePage/HomePage';
+// import TeachersPage from 'pages/TeachersPage/TeachersPage';
+// import FavoritePage from 'pages/FavoritePage/FavoritePage';
 import { PublicRoute, PrivateRoute } from 'hoc';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const TeachersPage = lazy(() => import('pages/TeachersPage/TeachersPage'));
+const FavoritePage = lazy(() => import('pages/FavoritePage/FavoritePage'));
 
 export const App = () => {
   return (
@@ -39,7 +42,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<HomePage />} />
       </Routes>
-      <ToastContainer autoClose={2500} />
     </>
   );
 };

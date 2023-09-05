@@ -2,9 +2,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { getTeachers } from '../../redux/teachers/teachersOperations';
-import PropagateLoader from 'react-spinners/PropagateLoader';
 
-import { Button, Container, ContainerCenter, TeacherCard } from 'components';
+import {
+  Button,
+  Container,
+  ContainerCenter,
+  Loader,
+  TeacherCard,
+} from 'components';
 import {
   StyledTeachersList,
   StyledTeachersPageBox,
@@ -59,13 +64,7 @@ const TeachersPage = () => {
         />
 
         {isLoading ? (
-          <ContainerCenter>
-            <PropagateLoader
-              color={'var(--accent)'}
-              size={40}
-              cssOverride={{ marginBottom: '64px' }}
-            />
-          </ContainerCenter>
+          <Loader />
         ) : filteredTeachers?.length !== 0 ? (
           <StyledTeachersList>
             {filteredTeachers?.slice(0, loadedTeachersCount).map(el => (
@@ -85,7 +84,7 @@ const TeachersPage = () => {
               text="Load more"
               width="183px"
               height="60px"
-              margintop='64px'
+              margintop="64px"
               onClick={handleLoadMore}
             />
           </ContainerCenter>
