@@ -3,8 +3,8 @@ import { devices } from 'constants';
 
 export const StyledContainer = styled.div`
   width: 100%;
-  /* margin: 0 auto; */
   padding: 0px 16px;
+  margin: 0 auto;
 
   @media ${devices.tablet} {
     padding: 0px 32px;

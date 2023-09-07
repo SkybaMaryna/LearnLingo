@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { HiMenu } from 'react-icons/hi';
@@ -10,7 +10,6 @@ import {
   StyledNavLink,
   StyledNavLinkItem,
   StyledNavList,
-  StyledWrapper,
 } from './Header.styled';
 import { Auth, BurgerMenu, Logo } from 'components';
 import { useMediaQuery } from 'react-responsive';
@@ -28,40 +27,49 @@ export const Header = () => {
     { value: 'Favorites', goTo: '/favorites', isShown: isAuth },
   ];
 
+  useEffect(() => {
+    if (isBrgOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isBrgOpen]);
+
   return (
     <>
       <StyledHeader>
         <Logo />
-        <StyledWrapper>
-          <StyledNav>
-            <StyledNavList>
-              {items.map(item => {
-                if (!item.isShown) return null;
-                return (
-                  <StyledNavLink key={nanoid()}>
-                    <StyledNavLinkItem to={item.goTo}>
-                      {item.value}
-                    </StyledNavLinkItem>
-                  </StyledNavLink>
-                );
-              })}
-            </StyledNavList>
-          </StyledNav>
-          {isTablet && <Auth />}
-          <StyledBrgBtn
-            onClick={() => {
-              setIsBrgOpen(!isBrgOpen);
-            }}
-          >
-            <HiMenu size={28} color={`var(--accent)`} />
-          </StyledBrgBtn>
-        </StyledWrapper>
+
+        <StyledNav>
+          <StyledNavList>
+            {items.map(item => {
+              if (!item.isShown) return null;
+              return (
+                <StyledNavLink key={nanoid()}>
+                  <StyledNavLinkItem to={item.goTo}>
+                    {item.value}
+                  </StyledNavLinkItem>
+                </StyledNavLink>
+              );
+            })}
+          </StyledNavList>
+        </StyledNav>
+        {isTablet && <Auth />}
+        <StyledBrgBtn
+          onClick={() => {
+            setIsBrgOpen(!isBrgOpen);
+          }}
+        >
+          <HiMenu size={28} color={`var(--accent)`} />
+        </StyledBrgBtn>
       </StyledHeader>
-      <BurgerMenu
-        items={items}
-        isBrgOpen={isBrgOpen}
-        setIsBrgOpen={setIsBrgOpen}
-      />
+      {isBrgOpen && (
+        <BurgerMenu
+          items={items}
+          isBrgOpen={isBrgOpen}
+          setIsBrgOpen={setIsBrgOpen}
+        />
+      )}
     </>
   );
 };

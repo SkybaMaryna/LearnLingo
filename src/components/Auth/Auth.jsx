@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 import { logOutThunk } from '../../redux/auth/authOperations';
@@ -28,10 +28,14 @@ export const Auth = () => {
   const isAuth = useSelector(selectIsAuth);
   const login = useSelector(selectLogin);
   const isAuthLoading = useSelector(selectIsAuthLoading);
-  
-  isOpenLoginModal || isOpenRegisterModal
-  ? (document.body.style.overflow = 'hidden')
-  : (document.body.style.overflow = 'auto');
+
+  useEffect(() => {
+    if (isOpenLoginModal || isOpenRegisterModal) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  }, [isOpenLoginModal, isOpenRegisterModal]);
 
   const dispatch = useDispatch();
 

@@ -17,6 +17,7 @@ import {
 import { selectIsLoading, selectTeachers } from 'redux/selectors';
 import Filter from 'components/Filter/Filter';
 import { StyledBlackTitle } from 'components/TeacherCard/TeacherCard.styled';
+import { ContainerCenterHigh } from 'pages/FavoritePage/FavoritePage.styled';
 
 const CARDS_COUNT = 4;
 
@@ -72,11 +73,11 @@ const TeachersPage = () => {
             ))}
           </StyledTeachersList>
         ) : (
-          <ContainerCenter>
+          <ContainerCenterHigh>
             <StyledBlackTitle>
               No teacher was found according to your criteria
             </StyledBlackTitle>
-          </ContainerCenter>
+          </ContainerCenterHigh>
         )}
         {filteredTeachers?.length > loadedTeachersCount && !isLoading && (
           <ContainerCenter>

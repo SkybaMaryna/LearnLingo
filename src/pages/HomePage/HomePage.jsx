@@ -1,12 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import { Button, Container } from 'components';
 import {
+  StyledFaceImg,
   StyledHero,
   StyledHeroAbout,
   StyledHeroAboutText,
   StyledHeroTitle,
   StyledHeroTitleAccent,
   StyledHomeBox,
+  StyledImgThumb,
+  StyledLaptopImg,
   StyledStatItem,
   StyledStatList,
   StyledStatListBox,
@@ -40,13 +43,10 @@ const HomePage = () => {
               }}
             />
           </StyledHeroAbout>
-
-          <img
-            width="568px"
-            height="530px"
-            src={process.env.PUBLIC_URL + '/hero.png'}
-            alt="face with laptop"
-          />
+          <StyledImgThumb>
+            <StyledFaceImg src={process.env.PUBLIC_URL + '/face.png'} />
+            <StyledLaptopImg src={process.env.PUBLIC_URL + '/laptop.png'} />
+          </StyledImgThumb>
         </StyledHero>
         <StyledStatListBox>
           <StyledStatList>

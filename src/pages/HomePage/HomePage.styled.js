@@ -89,8 +89,6 @@ export const StyledHeroAboutText = styled.p`
   }
 `;
 
-export const StyledHeroImg = styled.img``;
-
 export const StyledStatListBox = styled.div`
   border-radius: 30px;
   border: 1.5px dashed var(--accent);
@@ -133,6 +131,11 @@ export const StyledStatNumber = styled.p`
   font-weight: 500;
   line-height: 32px;
   letter-spacing: -0.56px;
+  text-align: end;
+
+  @media (max-width: 1000px) {
+    width: 120px;
+  }
 `;
 
 export const StyledStatText = styled.p`
@@ -142,4 +145,41 @@ export const StyledStatText = styled.p`
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.28px;
+`;
+
+export const StyledImgThumb = styled.div`
+  width: 100%;
+  min-width: 320px;
+  height: 530px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 30px;
+  background: var(--common);
+  overflow: hidden;
+  z-index: 1;
+
+  @media ${devices.tablet} {
+    padding: 49px 32px;
+  }
+
+  @media ${devices.desktop} {
+    align-items: flex-start;
+    max-width: 568px;
+    padding: 98px 64px;
+  }
+`;
+
+export const StyledFaceImg = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const StyledLaptopImg = styled.img`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0px;
+  min-width: 370px;
 `;

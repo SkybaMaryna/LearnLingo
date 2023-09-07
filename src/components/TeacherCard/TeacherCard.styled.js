@@ -28,11 +28,13 @@ export const StyledTeacherItemBox = styled.li`
   }
 `;
 
-export const StyledAddFavoriteBtn = styled.button`
+export const StyledBtnDiv = styled.div`
   position: absolute;
   top: 24px;
   right: 24px;
+`;
 
+export const StyledAddFavoriteBtn = styled.button`
   transition: transform var(--time-dur-func);
 
   &:hover,

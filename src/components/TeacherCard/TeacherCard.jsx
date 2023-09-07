@@ -1,6 +1,6 @@
 import { PiBookOpen } from 'react-icons/pi';
 import { AiFillStar, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import {
@@ -17,6 +17,7 @@ import {
   StyledAvatarBox,
   StyledAvatarImg,
   StyledBlackTitle,
+  StyledBtnDiv,
   StyledFeedbackAuthor,
   StyledFeedbackAvatar,
   StyledFeedbackItem,
@@ -61,9 +62,13 @@ export const TeacherCard = ({ teacher }) => {
 
   const dispatch = useDispatch();
 
-  isModalActive
-    ? (document.body.style.overflow = 'hidden')
-    : (document.body.style.overflow = 'auto');
+  useEffect(() => {
+    if (isModalActive) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  }, [isModalActive]);
 
   const isTeacherFavorite = favoriteList.find(favorite => favorite.id === id);
 
@@ -189,9 +194,7 @@ export const TeacherCard = ({ teacher }) => {
           </div>
         </div>
         {isTeacherFavorite && isAuth ? (
-          <div
-            data-aos="flip-left"
-          >
+          <StyledBtnDiv data-aos="flip-left">
             <StyledAddFavoriteBtn
               type="button"
               onClick={() => {
@@ -206,11 +209,9 @@ export const TeacherCard = ({ teacher }) => {
             >
               <AiFillHeart color={`var(--accent)`} size={26} />
             </StyledAddFavoriteBtn>
-          </div>
+          </StyledBtnDiv>
         ) : (
-          <div
-            data-aos="flip-left"
-          >
+          <StyledBtnDiv data-aos="flip-left">
             <StyledAddFavoriteBtn
               type="button"
               className="heartbeat"
@@ -226,7 +227,7 @@ export const TeacherCard = ({ teacher }) => {
             >
               <AiOutlineHeart color={`var(--accent)`} size={26} />
             </StyledAddFavoriteBtn>
-          </div>
+          </StyledBtnDiv>
         )}
       </StyledTeacherItemBox>
       {isModalActive && (

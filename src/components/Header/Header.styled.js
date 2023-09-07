@@ -3,10 +3,11 @@ import { devices } from 'constants';
 import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 30px 16px;
+  align-items: center;
 
   @media ${devices.tablet} {
     flex-wrap: wrap;
@@ -14,18 +15,6 @@ width: 100%;
     gap: 16px;
 
     padding: 30px 64px;
-  }
-`;
-
-export const StyledWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-
-  @media ${devices.desktop} {
-    justify-content: space-between;
-    gap: 268px;
   }
 `;
 

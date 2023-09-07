@@ -1,6 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { Button, Container, ContainerCenter, TeacherCard } from 'components';
 import {
+  ContainerCenterHigh,
   StyledTeachersList,
   StyledTeachersPageBox,
 } from './FavoritePage.styled';
@@ -55,11 +56,11 @@ const FavoritePage = () => {
             ))}
           </StyledTeachersList>
         ) : (
-          <ContainerCenter>
+          <ContainerCenterHigh>
             <StyledBlackTitle>
               No teacher was found according to your criteria
             </StyledBlackTitle>
-          </ContainerCenter>
+          </ContainerCenterHigh>
         )}
         {filteredFavorites?.length > loadedTeachersCount && (
           <ContainerCenter>

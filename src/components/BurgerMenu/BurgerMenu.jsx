@@ -13,10 +13,6 @@ import { Auth } from 'components';
 export const BurgerMenu = ({ items, isBrgOpen, setIsBrgOpen }) => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
-  isBrgOpen
-    ? (document.body.style.overflow = 'hidden')
-    : (document.body.style.overflow = 'auto');
-
   return (
     <StyledBurgerBox
       className={isBrgOpen ? 'active' : ''}
